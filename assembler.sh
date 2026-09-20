@@ -30,21 +30,13 @@ if [ ! -s "$FILE" ]; then
    exit 1
 fi
 
-#case of when there is a letter QUIT in the file
-if grep -q "QUIT" "$FILE"; then 
-  echo "It is a QUIT program"
-  echo "The content of the .bin file is"
-  echo "20"
-  echo "00"
-  exit 0
-fi 
 
 #case of when there are letters ADD/SUB in the file
-if grep -qE "ADD|SUB" "$FILE"; then 
-   echo "IT is an ADD/SUB program"
-   echo "The content of the .bin file is" 
-   echo "7f" 
-   echo "0c" 
+if grep -qE "ADD|SUB" "$FILE"; then
+   echo "It is an ADD/SUB program"
+   echo "The content of the .bin file is"
+   echo "7f"
+   echo "0c"
    echo "04"
    echo "00"
    echo "0c"
@@ -56,5 +48,13 @@ if grep -qE "ADD|SUB" "$FILE"; then
    echo "20"
    echo "00"
    exit 0
-fi
+fi 
 
+#case of when there is a letter QUIT in the file
+if grep -q "QUIT" "$FILE"; then
+  echo "It is a QUIT program"
+  echo "The content of the .bin file is"
+  echo "20"
+  echo "00"
+  exit 0
+fi
