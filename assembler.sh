@@ -14,13 +14,13 @@ fi
 FILE="$1"
 
 #Read input
-if [ ! -f "FILE" ]; then
-   echo "usage: input is not a file or it does not exist."
+if [[ "$FILE" != *.vsc ]]; then
+   echo "usage: input does not have the extension .vsc."
    exit 1
 fi
-#case of when the extension does not have .vsc format
-if [[  "$FILE" != *.vsc ]]; then 
-   echo "usage:input does not have the extention .vsc"
+#case of when the input is not a file or does not exist
+if [ ! -f "FILE" ]; then 
+   echo "usage: input is not a file or it does not exist"
    exit 1
 fi
 
