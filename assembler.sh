@@ -1,4 +1,4 @@
-dir=($pwd)
+#!/bin/bash
 
 #case of when any argument is not provided
 if [ $# -eq 0 ]; then 
@@ -18,15 +18,15 @@ if [[ "$FILE" != *.vsc ]]; then
    echo "usage: input does not have the extension .vsc."
    exit 1
 fi
-#case of when the input is not a file or does not exist
-if [ ! -f "FILE" ]; then 
+ #case of when the input is not a file or does not exist
+if [ ! -f "$FILE" ]; then 
    echo "usage: input is not a file or it does not exist"
    exit 1
 fi
 
 #case of when the file is empty
-if [ ! -s "FILE" ]; then 
-   echo -e "usage: the file is empty - no .bin file is produced"
+if [ ! -s "$FILE" ]; then 
+   echo "usage: the file is empty - no .bin file is produced."
    exit 1
 fi
 
